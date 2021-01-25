@@ -1,0 +1,589 @@
+{
+    "$schema": "https://github.com/Open-Systems-Pharmacology/QualificationPlan/releases/download/v2.1/OSP_Qualification_Plan_Schema.json",
+    "Projects": [
+        {
+            "Id": "Moclobemide",
+            "Path": "../Moclobemide-Model.json",
+            "BuildingBlocks": [],
+            "SimulationParameters": []
+        }
+    ],
+    "ObservedDataSets": [],
+    "Plots": {
+        "AxesSettings": {
+            "GOFMergedPlotsPredictedVsObserved": [
+                {
+                    "Type": "X",
+                    "Dimension": "Concentration (molar)",
+                    "Unit": "µmol/l",
+                    "GridLines": false,
+                    "Scaling": "Log"
+                },
+                {
+                    "Type": "Y",
+                    "Dimension": "Concentration (molar)",
+                    "Unit": "µmol/l",
+                    "GridLines": false,
+                    "Scaling": "Log"
+                }
+            ],
+            "GOFMergedPlotsResidualsOverTime": [
+                {
+                    "Type": "X",
+                    "Dimension": "Time",
+                    "Unit": "h",
+                    "GridLines": false,
+                    "Scaling": "Linear"
+                },
+                {
+                    "Type": "Y",
+                    "Dimension": "Dimensionless",
+                    "Unit": "",
+                    "GridLines": false,
+                    "Scaling": "Linear"
+                }
+            ],
+            "ComparisonTimeProfile": [
+                {
+                    "Type": "X",
+                    "Dimension": "Time",
+                    "Unit": "h",
+                    "GridLines": false,
+                    "Scaling": "Linear"
+                },
+                {
+                    "Type": "Y",
+                    "Dimension": "Concentration (molar)",
+                    "Unit": "µmol/l",
+                    "GridLines": false,
+                    "Scaling": "Log"
+                }
+            ],
+            "DDIRatioPlotsPredictedVsObserved": [
+                {
+                    "Type": "X",
+                    "Dimension": "Dimensionless",
+                    "Unit": "",
+                    "GridLines": false,
+                    "Scaling": "Log"
+                },
+                {
+                    "Type": "Y",
+                    "Dimension": "Dimensionless",
+                    "Unit": "",
+                    "GridLines": false,
+                    "Scaling": "Log"
+                }
+            ],
+            "DDIRatioPlotsResidualsVsObserved": [
+                {
+                    "Type": "X",
+                    "Dimension": "Dimensionless",
+                    "Unit": "",
+                    "GridLines": false,
+                    "Scaling": "Log"
+                },
+                {
+                    "Type": "Y",
+                    "Dimension": "Dimensionless",
+                    "Unit": "",
+                    "GridLines": false,
+                    "Scaling": "Log"
+                }
+            ],
+            "PKRatioPlots": [
+                {
+                    "Type": "X",
+                    "Dimension": "Age",
+                    "Unit": "year(s)",
+                    "GridLines": false,
+                    "Scaling": "Linear"
+                },
+                {
+                    "Type": "Y",
+                    "Dimension": "Dimensionless",
+                    "Unit": "",
+                    "GridLines": false,
+                    "Scaling": "Log"
+                }
+            ]
+        },
+        "PlotSettings": {
+            "ChartWidth": 500,
+            "ChartHeight": 400,
+            "Fonts": {
+                "AxisSize": 11,
+                "LegendSize": 9,
+                "OriginSize": 9,
+                "FontFamilyName": "Arial",
+                "WatermarkSize": 40
+            }
+        },
+        "AllPlots": [
+            {
+                "Project": "Moclobemide",
+                "Simulation": "50mg iv",
+                "SectionId": 331
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "150mg iv 20min",
+                "SectionId": 331
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "50mg po",
+                "SectionId": 331
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "100mg po",
+                "SectionId": 331
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "150mg po",
+                "SectionId": 331
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "150mg po 14d",
+                "SectionId": 331
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "200mg po",
+                "SectionId": 331
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "300mg po",
+                "SectionId": 331
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "300mg po PM",
+                "SectionId": 331
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "300mg po asian",
+                "SectionId": 331
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "300mg po asian PM",
+                "SectionId": 331
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "300mg po 7d",
+                "SectionId": 331
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "300mg po PM 7d",
+                "SectionId": 331
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "150mg po female 28d",
+                "SectionId": 332
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "300mg po pred",
+                "SectionId": 332
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "300mg po asian popSim",
+                "SectionId": 332
+            },
+            {
+                "Project": "Moclobemide",
+                "Simulation": "300mg po asian PM popSim",
+                "SectionId": 332
+            }
+        ],
+        "GOFMergedPlots": [
+            {
+                "Title": "Moclobemide concentration in plasma",
+                "SectionId": 32,
+                "Artifacts": [
+                    "Plot",
+                    "GMFE",
+                    "Measure"
+                ],
+                "PlotType": "predictedVsObserved|residualsOverTime",
+                "Groups": [
+                    {
+                        "Caption": "iv administration (model building)",
+                        "Symbol": "Cross",
+                        "OutputMappings": [
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg iv",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.iv_inf_2min.sd.PatID.1",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg iv",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.iv_inf_2min.sd.PatID.2",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg iv",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.iv_inf_2min.sd.PatID.3",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg iv",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.iv_inf_2min.sd.PatID.4",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg iv",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.iv_inf_2min.sd.PatID.5",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg iv",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.iv_inf_2min.sd.PatID.6",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg iv",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.iv_inf_2min.sd.PatID_1",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg iv",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.iv_inf_2min.sd.PatID_2",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg iv",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.iv_inf_2min.sd.PatID_3",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "150mg iv 20min",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Schoerlin1987.Moclobemide.150.iv_inf_20min.sd.day1.RepSubject",
+                                "Color": "#FF8000"
+                            }
+                        ]
+                    },
+                    {
+                        "Caption": "Oral administration (model building)",
+                        "Symbol": "Triangle",
+                        "OutputMappings": [
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "300mg po asian PM",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Yu2001.Asian.Moclobemide.300.po.sd.PM",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "300mg po PM",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Gram1995.Moclobemide.300.po.sd.PM",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "300mg po PM 7d",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Gram1995.Moclobemide.300.po.bid.PM",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg po",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Wiesel1985.Moclobemid.50.po.sd.repPat",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "100mg po",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Wiesel1985.Moclobemid.100.po.sd.repPat",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "200mg po",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Wiesel1985.Moclobemid.200.po.sd.repPat",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "150mg po 14d",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Schoerlin1987.Moclobemide.100.po.tid.day8.RepSubject",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "150mg po 14d",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Schoerlin1987.Moclobemide.100.po.tid.day15.RepSubject",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "150mg po 14d",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Schoerlin1987.Moclobemide.100.po.tid.day22.RepSubject",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "150mg po",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Guentert1990.Moclobemide.150.po.tid.repPat.Day1",
+                                "Color": "#FF8000"
+                            },
+
+
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg po",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.po.sd.PatID.1",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg po",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.po.sd.PatID.2",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg po",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.po.sd.PatID.3",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg po",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.po.sd.PatID.4",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg po",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.po.sd.PatID.5",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg po",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.po.sd.PatID.6",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg po",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.po.sd.PatID_1",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg po",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.po.sd.PatID_2",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "50mg po",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Raaflaub1984.Moclobemide.50.po.sd.PatID_3",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "300mg po",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Gram1995.Moclobemide.300.po.sd.EM",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "300mg po asian",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Yu2001.Asian.Moclobemide.300.po.sd.EM",
+                                "Color": "#FF8000"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "300mg po 7d",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Gram1995.Moclobemide.300.po.bid.EM",
+                                "Color": "#FF8000"
+                            }
+                        ]
+                    },
+                    {
+                        "Caption": "Oral administration (model validation)",
+                        "Symbol": "Triangle",
+                        "OutputMappings": [
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "300mg po pred",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Dingermanse1998.Moclobemide.300.po.sd",
+                                "Color": "#00ffbf"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "150mg po female 28d",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Ignjatovic2009.Moclobemide.150.po.tid.day14",
+                                "Color": "#00ffbf"
+                            },
+                            {
+                                "Project": "Moclobemide",
+                                "Simulation": "150mg po female 28d",
+                                "Output": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                                "ObservedData": "Ignjatovic2009.Moclobemide.150.po.tid.day28",
+                                "Color": "#00ffbf"
+                            }
+                        ]
+                    }
+                ]
+            }            
+        ],
+        "ComparisonTimeProfilePlots": [],
+        "DDIRatioPlots": [],
+        "PKRatioPlots": []
+    },
+    "Inputs": [
+        {
+            "Project": "Moclobemide",
+            "Name": "Moclobemide",
+            "Type": "Compound",
+            "SectionId": 31
+        },
+        {
+            "Project": "Moclobemide",
+            "Name": "Moclobemide tablet",
+            "Type": "Formulation",
+            "SectionId": 31
+        }
+    ],
+    "Sections": [
+        {
+            "Id": 1,
+            "Title": "1 Introduction",
+            "Content": "Content/Section1_Introduction.md"
+        },
+        {
+            "Id": 2,
+            "Title": "2 Methods",
+            "Content": "Content/Section2_Methods.md",
+            "Sections": [
+                {
+                    "Id": 21,
+                    "Title": "2.1 Modeling Strategy",
+                    "Content": "Content/Section2.1_Modeling_Strategy.md"
+                },
+                {
+                    "Id": 22,
+                    "Title": "2.2 Data",
+                    "Content": "Content/Section2.2_Data.md"
+                },
+                {
+                    "Id": 23,
+                    "Title": "2.3 Model Parameters and Assumptions",
+                    "Content": "Content/Section2.3_Model_Parameters_and_Assumptions.md"
+                }
+            ]
+        },
+        {
+            "Id": 3,
+            "Title": "3 Results and Discussion",
+            "Content": "Content/Section3_Results_and_Discussion.md",
+            "Sections": [
+                {
+                    "Id": 31,
+                    "Title": "3.1 Final input parameters",
+                    "Content": "Content/Input_table.md"
+                },
+                {
+                    "Id": 32,
+                    "Title": "3.2 Diagnostics Plots",
+                    "Content": "Content/GOF_diagnostics.md"
+                },
+                {
+                    "Id": 33,
+                    "Title": "3.3 Concentration-Time Profiles",
+                    "Content": "Content/Concentration_time_profiles.md",
+                    "Sections": [
+                        {
+                            "Id": 331,
+                            "Title": "3.3.1 Model Building",
+                            "Content": "Content/Concentration_time_profiles_building.md"
+                        },
+                        {
+                            "Id": 332,
+                            "Title": "3.3.2 Model Verification",
+                            "Content": "Content/Concentration_time_profiles_verification.md"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Id": 4,
+            "Title": "4 Conclusion",
+            "Content": "Content/Section4_Conclusion.md"
+        },
+        {
+            "Id": 5,
+            "Title": "5 References",
+            "Content": "Content/References.md"
+        },
+        {
+            "Id": 6,
+            "Title": "6 Glossary",
+            "Content": "Content/glossary.md"
+        }
+    ],
+    "Intro": [
+        {
+            "Path": "Content/titlepage.md"
+        }
+    ]
+}
