@@ -27,6 +27,6 @@ Following parameter values were estimated for the base model:
 
 - Vmax_2C19
 
-- Intrinisc Clearance FMO (i.e. non CYP2C19 metabolism)
+- Intrinsic Clearance FMO (i.e. non CYP2C19 metabolism)
 
 - Kinact<sub>half</sub> CYP2C19 for time-dependent autoinhibition
