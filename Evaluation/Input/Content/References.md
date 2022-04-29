@@ -8,19 +8,19 @@
 
 **Hoskins 2001** Hoskins J, Shenfield G, Murray M, Gross A. Characterization of moclobemide N -oxidation in human liver microsomes. Xenobiotica. 2001 Jan;31(7):387–97.
 
-**IPCS ICHEM** Website: inchem.org/documents/pims/pharm/pim151.htm#SectionTitle:3.3%20%20Physical%20properties
+**IPCS ICHEM** Website: https://inchem.org/documents/pims/pharm/pim151.htm#SectionTitle:3.3%20%20Physical%20properties
 
 **Ignjatovic 2009** Ignjatovic AR, Miljkovic B, Todorovic D, Timotijevic I, Pokrajac M. Moclobemide monotherapy vs. combined therapy with valproic acid or carbamazepine in depressive patients: A pharmacokinetic interaction study. Br J Clin Pharmacol. 2009;67(2):199-208.
 
 **Kuepfer 2016** Kuepfer L, Niederalt C, Wendl T, Schlender JF, Willmann S, Lippert J, Block M, Eissing T, Teutonico D. Applied Concepts in PBPK Modeling: How to Build a PBPK/PD Model.CPT Pharmacometrics Syst Pharmacol. 2016 Oct;5(10):516-531.
 
-**Kramer-Nielsen 1996 ** Kramer-Nielsen KK, Flinois JP, Beaune P, Brøsen K. The biotransformation of clomipramine in vitro, identification of the cytochrome P450s responsible for the separate metabolic pathways. *J Pharmacol Exp Ther*. 1996 Jun;277(3):1659–64.
+**Kramer-Nielsen 1996** Kramer-Nielsen KK, Flinois JP, Beaune P, Brøsen K. The biotransformation of clomipramine in vitro, identification of the cytochrome P450s responsible for the separate metabolic pathways. *J Pharmacol Exp Ther*. 1996 Jun;277(3):1659–64.
 
 **Mayersohn 1995**  Mayersohn M, Guentert TW. Clinical Pharmacokinetics of the Monoamine Oxidase-A Inhibitor Moclobemide*, Clinical Pharmacokinetics*. 1995 Nov;29(5):292–332.
 
-**MHRA Label Moclobemide ** MHRA label of Moclobemide film-coated tablets. Website: mhra.gov.uk/home/groups/par/documents/websiteresources/con097060.pdf
+**MHRA Label Moclobemide** MHRA label of Moclobemide film-coated tablets. Website: http://www.mhra.gov.uk/home/groups/par/documents/websiteresources/con097060.pdf
 
-**Moclobemide, INCHEM**, Website inchem.org/documents/pims/pharm/pim151.htm#PartTitle:3.%20%20PHYSICO-CHEMICAL%20PROPERTIES
+**Moclobemide, INCHEM**, Website https://inchem.org/documents/pims/pharm/pim151.htm#PartTitle:3.%20%20PHYSICO-CHEMICAL%20PROPERTIES
 
 **Nair 1993** Nair NPV, Ahmed SK, Ng Ying Kin NMK. Biochemistry and pharmacology of reversible inhibitors of MAO-A agents: Focus on moclobemide. *J Psychiatry Neurosci*. 1993;18(5):214-225.
 
