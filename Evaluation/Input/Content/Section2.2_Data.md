@@ -5,7 +5,7 @@ A literature search was performed to collect available information on physico-ch
 | **Parameter**                   | **Unit**          | **Value**    | Source                                  | **Description**                                              |
 | :------------------------------ | ----------------- | ------------ | --------------------------------------- | ------------------------------------------------------------ |
 | MW<sup>+</sup>                  | g/mol             | 268.74       | [DrugBank DB01171](#5-references)       | Molecular weight                                             |
-| pK<sub>a,base</sub><sup>+</sup> |                   | 6.2          | [IPCS ICHEM](#5-references)             | Acidic dissociation constant                                 |
+| pK<sub>a,base</sub><sup>+</sup> |                   | 6.2          | [IPCS INCHEM](#5-references)             | Acidic dissociation constant                                 |
 | Solubility (pH)<sup>+</sup>     | mg/mL             | 3<br />(6.8) | [Moclobemide, INCHEM](#5-references)    | Aqueous Solubility                                           |
 | logD                            |                   | 1.79         | [Pons 1990](#5-references)              | Distribution coefficient                                     |
 | fu<sup>+</sup>                  | %                 | 50           | [MHRA Label Moclobemide](#5-references) | Fraction unbound in plasma                                   |

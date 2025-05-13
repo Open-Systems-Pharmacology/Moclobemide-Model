@@ -8,7 +8,7 @@
 
 **Hoskins 2001** Hoskins J, Shenfield G, Murray M, Gross A. Characterization of moclobemide N -oxidation in human liver microsomes. Xenobiotica. 2001 Jan;31(7):387–97.
 
-**IPCS ICHEM** Website: https://inchem.org/documents/pims/pharm/pim151.htm#SectionTitle:3.3%20%20Physical%20properties
+**IPCS INCHEM** Website: https://inchem.org/documents/pims/pharm/pim151.htm#SectionTitle:3.3%20%20Physical%20properties
 
 **Ignjatovic 2009** Ignjatovic AR, Miljkovic B, Todorovic D, Timotijevic I, Pokrajac M. Moclobemide monotherapy vs. combined therapy with valproic acid or carbamazepine in depressive patients: A pharmacokinetic interaction study. Br J Clin Pharmacol. 2009;67(2):199-208.
 
