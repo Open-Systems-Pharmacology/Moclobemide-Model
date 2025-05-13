@@ -178,7 +178,83 @@
       ]
     }
   ],
-  "Populations": [],
+  "Populations": [
+    {
+      "Name": "Asian_Yu2001",
+      "Seed": 105612593,
+      "Settings": {
+        "NumberOfIndividuals": 2000,
+        "ProportionOfFemales": 13,
+        "Age": {
+          "Min": 20.0,
+          "Max": 36.0,
+          "Unit": "year(s)"
+        },
+        "Weight": {
+          "Min": 40.0,
+          "Max": 120.0,
+          "Unit": "kg"
+        },
+        "Individual": {
+          "Name": "Asian male",
+          "Seed": 105008812,
+          "OriginData": {
+            "CalculationMethods": [
+              "SurfaceAreaPlsInt_VAR1",
+              "Body surface area - Mosteller"
+            ],
+            "Species": "Human",
+            "Population": "Asian_Tanaka_1996",
+            "Gender": "MALE",
+            "Age": {
+              "Value": 30.0,
+              "Unit": "year(s)"
+            }
+          },
+          "ExpressionProfiles": [
+            "CYP2C19|Human|Healthy",
+            "FMO_other|Human|Healthy"
+          ]
+        }
+      },
+      "AdvancedParameters": [
+        {
+          "Name": "CYP2C19|Reference concentration",
+          "Seed": 105663031,
+          "DistributionType": "Normal",
+          "Parameters": [
+            {
+              "Name": "Mean",
+              "Value": 0.76,
+              "Unit": "µmol/l"
+            },
+            {
+              "Name": "Deviation",
+              "Value": 0.0,
+              "Unit": "µmol/l"
+            }
+          ]
+        },
+        {
+          "Name": "CYP2C19|t1/2 (liver)",
+          "Seed": 105663062,
+          "DistributionType": "Normal",
+          "Parameters": [
+            {
+              "Name": "Mean",
+              "Value": 26.0,
+              "Unit": "h"
+            },
+            {
+              "Name": "Deviation",
+              "Value": 0.0,
+              "Unit": "h"
+            }
+          ]
+        }
+      ]
+    }
+  ],
   "Compounds": [
     {
       "Name": "Moclobemide",
@@ -5545,6 +5621,4941 @@
           },
           "Title": "150 mg moclobemide po female day28",
           "OriginText": "Moclobemide\n150mg po female 28d\n2020-06-17 20:01"
+        }
+      ],
+      "Interactions": [
+        {
+          "Name": "CYP2C19-TimeDep_AutoInh-fit",
+          "MoleculeName": "CYP2C19",
+          "CompoundName": "Moclobemide"
+        }
+      ]
+    },
+    {
+      "Name": "300mg po asian popSim",
+      "Model": "4Comp",
+      "ObservedData": [
+        "Gram1995.Moclobemide.300.po.sd.EM",
+        "Yu2001.Asian.Moclobemide.300.po.sd.EM"
+      ],
+      "Solver": {},
+      "OutputSchema": [
+        {
+          "Parameters": [
+            {
+              "Name": "Start time",
+              "Value": 0.0,
+              "Unit": "h"
+            },
+            {
+              "Name": "End time",
+              "Value": 2.0,
+              "Unit": "h"
+            },
+            {
+              "Name": "Resolution",
+              "Value": 20.0,
+              "Unit": "pts/h"
+            }
+          ]
+        },
+        {
+          "Parameters": [
+            {
+              "Name": "Start time",
+              "Value": 2.0,
+              "Unit": "h"
+            },
+            {
+              "Name": "End time",
+              "Value": 24.0,
+              "Unit": "h",
+              "ValueOrigin": {
+                "Source": "Unknown"
+              }
+            },
+            {
+              "Name": "Resolution",
+              "Value": 4.0,
+              "Unit": "pts/h"
+            }
+          ]
+        }
+      ],
+      "Parameters": [
+        {
+          "Path": "CYP2C19|Disease factor",
+          "Value": 1.0
+        },
+        {
+          "Path": "CYP2C19|Fraction expressed in blood cells",
+          "Value": 1.0
+        },
+        {
+          "Path": "CYP2C19|Fraction expressed in blood cells membrane",
+          "Value": 0.0
+        },
+        {
+          "Path": "CYP2C19|Fraction expressed in endosomes",
+          "Value": 1.0
+        },
+        {
+          "Path": "CYP2C19|Fraction expressed on plasma-side membrane of vascular endothelium",
+          "Value": 0.0
+        },
+        {
+          "Path": "CYP2C19|Fraction expressed on tissue-side membrane of vascular endothelium",
+          "Value": 0.0
+        },
+        {
+          "Path": "CYP2C19|Ontogeny factor",
+          "Value": 1.0
+        },
+        {
+          "Path": "CYP2C19|Ontogeny factor GI",
+          "Value": 1.0
+        },
+        {
+          "Path": "CYP2C19|Ontogeny factor GI table",
+          "Value": 0.001,
+          "TableFormula": {
+            "Name": "Ontogeny for CYP2C19 - Duodenum",
+            "XName": "Post menstrual age",
+            "XDimension": "Age in years",
+            "XUnit": "year(s)",
+            "YName": "Ontogeny for CYP2C19 - Duodenum",
+            "YDimension": "Dimensionless",
+            "UseDerivedValues": false,
+            "Points": [
+              {
+                "X": 0.33,
+                "Y": 0.001,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.47,
+                "Y": 0.03,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.53,
+                "Y": 0.09,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.58,
+                "Y": 0.18,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.62,
+                "Y": 0.3,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.72,
+                "Y": 0.64,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.77,
+                "Y": 0.76,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.81,
+                "Y": 0.83,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.87,
+                "Y": 0.91,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.94,
+                "Y": 0.95,
+                "RestartSolver": false
+              },
+              {
+                "X": 1.09,
+                "Y": 0.99,
+                "RestartSolver": false
+              },
+              {
+                "X": 1.39,
+                "Y": 1.0,
+                "RestartSolver": false
+              }
+            ]
+          }
+        },
+        {
+          "Path": "CYP2C19|Ontogeny factor table",
+          "Value": 0.001,
+          "TableFormula": {
+            "Name": "Ontogeny for CYP2C19 - Liver",
+            "XName": "Post menstrual age",
+            "XDimension": "Age in years",
+            "XUnit": "year(s)",
+            "YName": "Ontogeny for CYP2C19 - Liver",
+            "YDimension": "Dimensionless",
+            "UseDerivedValues": false,
+            "Points": [
+              {
+                "X": 0.33,
+                "Y": 0.001,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.47,
+                "Y": 0.03,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.53,
+                "Y": 0.09,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.58,
+                "Y": 0.18,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.62,
+                "Y": 0.3,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.72,
+                "Y": 0.64,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.77,
+                "Y": 0.76,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.81,
+                "Y": 0.83,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.87,
+                "Y": 0.91,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.94,
+                "Y": 0.95,
+                "RestartSolver": false
+              },
+              {
+                "X": 1.09,
+                "Y": 0.99,
+                "RestartSolver": false
+              },
+              {
+                "X": 1.39,
+                "Y": 1.0,
+                "RestartSolver": false
+              },
+              {
+                "X": 1.42,
+                "Y": 1.0,
+                "RestartSolver": false
+              }
+            ]
+          }
+        },
+        {
+          "Path": "CYP2C19|Reference concentration",
+          "Value": 0.76,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "CYP2C19|Relative expression in blood cells",
+          "Value": 0.0
+        },
+        {
+          "Path": "CYP2C19|Relative expression in plasma",
+          "Value": 0.0
+        },
+        {
+          "Path": "CYP2C19|Relative expression in vascular endothelium",
+          "Value": 0.0
+        },
+        {
+          "Path": "CYP2C19|t1/2 (intestine)",
+          "Value": 23.0,
+          "Unit": "h"
+        },
+        {
+          "Path": "CYP2C19|t1/2 (liver)",
+          "Value": 26.0,
+          "Unit": "h"
+        },
+        {
+          "Path": "Events|PO_300mg_TAB|Solution|Application_1|ProtocolSchemaItem|Volume of water/body weight",
+          "Value": 3.5,
+          "Unit": "ml/kg"
+        },
+        {
+          "Path": "FMO_other|Disease factor",
+          "Value": 1.0
+        },
+        {
+          "Path": "FMO_other|Fraction expressed in blood cells",
+          "Value": 1.0
+        },
+        {
+          "Path": "FMO_other|Fraction expressed in blood cells membrane",
+          "Value": 0.0
+        },
+        {
+          "Path": "FMO_other|Fraction expressed in endosomes",
+          "Value": 1.0
+        },
+        {
+          "Path": "FMO_other|Fraction expressed on plasma-side membrane of vascular endothelium",
+          "Value": 0.0
+        },
+        {
+          "Path": "FMO_other|Fraction expressed on tissue-side membrane of vascular endothelium",
+          "Value": 0.0
+        },
+        {
+          "Path": "FMO_other|Ontogeny factor",
+          "Value": 1.0
+        },
+        {
+          "Path": "FMO_other|Ontogeny factor GI",
+          "Value": 1.0
+        },
+        {
+          "Path": "FMO_other|Ontogeny factor GI table",
+          "Value": 1.0
+        },
+        {
+          "Path": "FMO_other|Ontogeny factor table",
+          "Value": 1.0
+        },
+        {
+          "Path": "FMO_other|Reference concentration",
+          "Value": 1.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "FMO_other|Relative expression in blood cells",
+          "Value": 0.0
+        },
+        {
+          "Path": "FMO_other|Relative expression in plasma",
+          "Value": 0.0
+        },
+        {
+          "Path": "FMO_other|Relative expression in vascular endothelium",
+          "Value": 0.0
+        },
+        {
+          "Path": "FMO_other|t1/2 (intestine)",
+          "Value": 23.0,
+          "Unit": "h"
+        },
+        {
+          "Path": "FMO_other|t1/2 (liver)",
+          "Value": 36.0,
+          "Unit": "h"
+        },
+        {
+          "Path": "Organism|ArterialBlood|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|ArterialBlood|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|ArterialBlood|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|ArterialBlood|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Bone|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Bone|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Bone|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Bone|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Bone|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Bone|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Brain|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Brain|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Brain|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.00011881334236,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.00014961101137
+        },
+        {
+          "Path": "Organism|Brain|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Brain|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Brain|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Fat|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Fat|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Fat|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Fat|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Fat|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Fat|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Gonads|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Gonads|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Gonads|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.00030595598216,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0003526545268
+        },
+        {
+          "Path": "Organism|Gonads|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Gonads|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Gonads|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Heart|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Heart|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Heart|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Heart|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Heart|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Heart|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Kidney|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Kidney|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Kidney|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.00021088028269,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.00015816021202
+        },
+        {
+          "Path": "Organism|Kidney|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Kidney|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Kidney|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Intracellular|CYP2C19|Initial concentration",
+          "Value": 1.1394302849,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Intracellular|CYP2C19|Relative expression",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Intracellular|FMO_other|Initial concentration",
+          "Value": 1.4992503748,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Intracellular|FMO_other|Relative expression",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Intracellular|CYP2C19|Initial concentration",
+          "Value": 1.1394302849,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Intracellular|CYP2C19|Relative expression",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Intracellular|FMO_other|Initial concentration",
+          "Value": 1.4992503748,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Intracellular|FMO_other|Relative expression",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Caecum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Caecum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|Caecum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Caecum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonAscendens|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonAscendens|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonAscendens|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonAscendens|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonDescendens|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonDescendens|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonDescendens|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonDescendens|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonSigmoid|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonSigmoid|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonSigmoid|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonSigmoid|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonTransversum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonTransversum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonTransversum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonTransversum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|Duodenum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Duodenum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|Duodenum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Duodenum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|LowerIleum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|LowerIleum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|LowerIleum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|LowerIleum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|LowerJejunum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|LowerJejunum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|LowerJejunum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|LowerJejunum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|Rectum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Rectum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|Rectum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Rectum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|Stomach|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Stomach|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|Stomach|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Stomach|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|UpperIleum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|UpperIleum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|UpperIleum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|UpperIleum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|UpperJejunum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|UpperJejunum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|UpperJejunum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|UpperJejunum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lung|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lung|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lung|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lung|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lung|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lung|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lung|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Lung|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0013302851011,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lung|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.00040608703086
+        },
+        {
+          "Path": "Organism|Lung|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Lung|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lung|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lung|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lung|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Muscle|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Muscle|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Muscle|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Muscle|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Muscle|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Muscle|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Pancreas|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Pancreas|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Pancreas|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Pancreas|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Pancreas|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Pancreas|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|PortalVein|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|PortalVein|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|PortalVein|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|PortalVein|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Skin|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Skin|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Skin|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Skin|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Skin|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Skin|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.2790121777,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.3238009746
+        },
+        {
+          "Path": "Organism|SmallIntestine|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.5468638682,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.3238009746
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.447434074,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.3238009746
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.447434074,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.3238009746
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.4394441798,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.3238009746
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.4732475783,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.3238009746
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Spleen|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Spleen|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Spleen|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Spleen|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Spleen|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Spleen|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Stomach|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Stomach|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Stomach|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Stomach|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Stomach|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Stomach|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|VenousBlood|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|VenousBlood|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|VenousBlood|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|VenousBlood|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        }
+      ],
+      "OutputSelections": [
+        "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)"
+      ],
+      "OutputMappings": [
+        {
+          "Scaling": "Log",
+          "Path": "300mg po asian popSim|Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Gram1995.Moclobemide.300.po.sd.EM"
+        },
+        {
+          "Scaling": "Log",
+          "Path": "300mg po asian popSim|Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Yu2001.Asian.Moclobemide.300.po.sd.EM"
+        }
+      ],
+      "Population": "Asian_Yu2001",
+      "Compounds": [
+        {
+          "Name": "Moclobemide",
+          "CalculationMethods": [
+            "Cellular partition coefficient method - Rodgers and Rowland",
+            "Cellular permeability - PK-Sim Standard"
+          ],
+          "Processes": [
+            {
+              "Name": "CYP2C19-Intrinsic-CL_MM_fit",
+              "MoleculeName": "CYP2C19"
+            },
+            {
+              "Name": "FMO_other-Intrinsic-CL-fit",
+              "MoleculeName": "FMO_other"
+            },
+            {
+              "Name": "Renal Clearances-Schoerlin 1987",
+              "SystemicProcessType": "Renal"
+            }
+          ],
+          "Protocol": {
+            "Name": "PO_300mg_TAB",
+            "Formulations": [
+              {
+                "Name": "Solution",
+                "Key": "Formulation"
+              }
+            ]
+          }
+        }
+      ],
+      "HasResults": true,
+      "PopulationAnalyses": [
+        {
+          "Type": "TimeProfile",
+          "Analysis": {
+            "Fields": [
+              {
+                "Name": "Moclobemide simulated",
+                "Dimension": "Concentration (molar)",
+                "Scaling": "Log",
+                "Unit": "µmol/l",
+                "QuantityPath": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                "QuantityType": "Drug, Observer",
+                "Color": "#000000",
+                "Area": "DataArea"
+              }
+            ],
+            "Statistics": [
+              {
+                "Id": "ArithmeticMean",
+                "LineStyle": "Solid"
+              },
+              {
+                "Id": "ArithmeticStandardDeviation",
+                "LineStyle": "Solid"
+              }
+            ]
+          },
+          "ObservedDataCollection": {
+            "ObservedData": [
+              "Yu2001.Asian.Moclobemide.300.po.sd.EM"
+            ],
+            "ApplyGrouping": false,
+            "CurveOptions": [
+              {
+                "Caption": "Yu2001.Asian.Moclobemide.300.po.sd.EM-Moclobemide-Peripheral Venous Blood-Plasma-CentralMeasure",
+                "Path": "Yu2001.Asian.Moclobemide.300.po.sd.EM|ObservedData|Peripheral Venous Blood|Plasma|Moclobemide|CentralMeasure",
+                "CurveOptions": {
+                  "LineStyle": "None",
+                  "Symbol": "Circle"
+                }
+              }
+            ]
+          },
+          "XAxisSettings": {
+            "AutoRange": false
+          },
+          "YAxisSettings": {
+            "AutoRange": false
+          },
+          "SecondaryYAxisSettings": [],
+          "Name": "Time Profile Analysis",
+          "FontAndSize": {
+            "Fonts": {
+              "AxisSize": 10,
+              "LegendSize": 8,
+              "TitleSize": 16,
+              "DescriptionSize": 12,
+              "OriginSize": 8,
+              "FontFamilyName": "Microsoft Sans Serif",
+              "WatermarkSize": 32
+            }
+          },
+          "Settings": {
+            "SideMarginsEnabled": true,
+            "LegendPosition": "RightInside",
+            "BackColor": "#00FFFFFF",
+            "DiagramBackColor": "#FFFFFF"
+          },
+          "OriginText": "Moclobemide\n300mg po asian popSim\n2020-06-17 20:13"
+        }
+      ],
+      "Interactions": [
+        {
+          "Name": "CYP2C19-TimeDep_AutoInh-fit",
+          "MoleculeName": "CYP2C19",
+          "CompoundName": "Moclobemide"
+        }
+      ]
+    },
+    {
+      "Name": "300mg po asian PM popSim",
+      "Model": "4Comp",
+      "ObservedData": [
+        "Yu2001.Asian.Moclobemide.300.po.sd.PM"
+      ],
+      "Solver": {},
+      "OutputSchema": [
+        {
+          "Parameters": [
+            {
+              "Name": "Start time",
+              "Value": 0.0,
+              "Unit": "h"
+            },
+            {
+              "Name": "End time",
+              "Value": 2.0,
+              "Unit": "h"
+            },
+            {
+              "Name": "Resolution",
+              "Value": 20.0,
+              "Unit": "pts/h"
+            }
+          ]
+        },
+        {
+          "Parameters": [
+            {
+              "Name": "Start time",
+              "Value": 2.0,
+              "Unit": "h"
+            },
+            {
+              "Name": "End time",
+              "Value": 24.0,
+              "Unit": "h",
+              "ValueOrigin": {
+                "Source": "Unknown"
+              }
+            },
+            {
+              "Name": "Resolution",
+              "Value": 4.0,
+              "Unit": "pts/h"
+            }
+          ]
+        }
+      ],
+      "Parameters": [
+        {
+          "Path": "CYP2C19|Disease factor",
+          "Value": 1.0
+        },
+        {
+          "Path": "CYP2C19|Fraction expressed in blood cells",
+          "Value": 1.0
+        },
+        {
+          "Path": "CYP2C19|Fraction expressed in blood cells membrane",
+          "Value": 0.0
+        },
+        {
+          "Path": "CYP2C19|Fraction expressed in endosomes",
+          "Value": 1.0
+        },
+        {
+          "Path": "CYP2C19|Fraction expressed on plasma-side membrane of vascular endothelium",
+          "Value": 0.0
+        },
+        {
+          "Path": "CYP2C19|Fraction expressed on tissue-side membrane of vascular endothelium",
+          "Value": 0.0
+        },
+        {
+          "Path": "CYP2C19|Ontogeny factor",
+          "Value": 1.0
+        },
+        {
+          "Path": "CYP2C19|Ontogeny factor GI",
+          "Value": 1.0
+        },
+        {
+          "Path": "CYP2C19|Ontogeny factor GI table",
+          "Value": 0.001,
+          "TableFormula": {
+            "Name": "Ontogeny for CYP2C19 - Duodenum",
+            "XName": "Post menstrual age",
+            "XDimension": "Age in years",
+            "XUnit": "year(s)",
+            "YName": "Ontogeny for CYP2C19 - Duodenum",
+            "YDimension": "Dimensionless",
+            "UseDerivedValues": false,
+            "Points": [
+              {
+                "X": 0.33,
+                "Y": 0.001,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.47,
+                "Y": 0.03,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.53,
+                "Y": 0.09,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.58,
+                "Y": 0.18,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.62,
+                "Y": 0.3,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.72,
+                "Y": 0.64,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.77,
+                "Y": 0.76,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.81,
+                "Y": 0.83,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.87,
+                "Y": 0.91,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.94,
+                "Y": 0.95,
+                "RestartSolver": false
+              },
+              {
+                "X": 1.09,
+                "Y": 0.99,
+                "RestartSolver": false
+              },
+              {
+                "X": 1.39,
+                "Y": 1.0,
+                "RestartSolver": false
+              }
+            ]
+          }
+        },
+        {
+          "Path": "CYP2C19|Ontogeny factor table",
+          "Value": 0.001,
+          "TableFormula": {
+            "Name": "Ontogeny for CYP2C19 - Liver",
+            "XName": "Post menstrual age",
+            "XDimension": "Age in years",
+            "XUnit": "year(s)",
+            "YName": "Ontogeny for CYP2C19 - Liver",
+            "YDimension": "Dimensionless",
+            "UseDerivedValues": false,
+            "Points": [
+              {
+                "X": 0.33,
+                "Y": 0.001,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.47,
+                "Y": 0.03,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.53,
+                "Y": 0.09,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.58,
+                "Y": 0.18,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.62,
+                "Y": 0.3,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.72,
+                "Y": 0.64,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.77,
+                "Y": 0.76,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.81,
+                "Y": 0.83,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.87,
+                "Y": 0.91,
+                "RestartSolver": false
+              },
+              {
+                "X": 0.94,
+                "Y": 0.95,
+                "RestartSolver": false
+              },
+              {
+                "X": 1.09,
+                "Y": 0.99,
+                "RestartSolver": false
+              },
+              {
+                "X": 1.39,
+                "Y": 1.0,
+                "RestartSolver": false
+              },
+              {
+                "X": 1.42,
+                "Y": 1.0,
+                "RestartSolver": false
+              }
+            ]
+          }
+        },
+        {
+          "Path": "CYP2C19|Reference concentration",
+          "Value": 0.76,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "CYP2C19|Relative expression in blood cells",
+          "Value": 0.0
+        },
+        {
+          "Path": "CYP2C19|Relative expression in plasma",
+          "Value": 0.0
+        },
+        {
+          "Path": "CYP2C19|Relative expression in vascular endothelium",
+          "Value": 0.0
+        },
+        {
+          "Path": "CYP2C19|t1/2 (intestine)",
+          "Value": 23.0,
+          "Unit": "h"
+        },
+        {
+          "Path": "CYP2C19|t1/2 (liver)",
+          "Value": 26.0,
+          "Unit": "h"
+        },
+        {
+          "Path": "Events|PO_300mg_TAB|Solution|Application_1|ProtocolSchemaItem|Volume of water/body weight",
+          "Value": 3.5,
+          "Unit": "ml/kg"
+        },
+        {
+          "Path": "FMO_other|Disease factor",
+          "Value": 1.0
+        },
+        {
+          "Path": "FMO_other|Fraction expressed in blood cells",
+          "Value": 1.0
+        },
+        {
+          "Path": "FMO_other|Fraction expressed in blood cells membrane",
+          "Value": 0.0
+        },
+        {
+          "Path": "FMO_other|Fraction expressed in endosomes",
+          "Value": 1.0
+        },
+        {
+          "Path": "FMO_other|Fraction expressed on plasma-side membrane of vascular endothelium",
+          "Value": 0.0
+        },
+        {
+          "Path": "FMO_other|Fraction expressed on tissue-side membrane of vascular endothelium",
+          "Value": 0.0
+        },
+        {
+          "Path": "FMO_other|Ontogeny factor",
+          "Value": 1.0
+        },
+        {
+          "Path": "FMO_other|Ontogeny factor GI",
+          "Value": 1.0
+        },
+        {
+          "Path": "FMO_other|Ontogeny factor GI table",
+          "Value": 1.0
+        },
+        {
+          "Path": "FMO_other|Ontogeny factor table",
+          "Value": 1.0
+        },
+        {
+          "Path": "FMO_other|Reference concentration",
+          "Value": 1.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "FMO_other|Relative expression in blood cells",
+          "Value": 0.0
+        },
+        {
+          "Path": "FMO_other|Relative expression in plasma",
+          "Value": 0.0
+        },
+        {
+          "Path": "FMO_other|Relative expression in vascular endothelium",
+          "Value": 0.0
+        },
+        {
+          "Path": "FMO_other|t1/2 (intestine)",
+          "Value": 23.0,
+          "Unit": "h"
+        },
+        {
+          "Path": "FMO_other|t1/2 (liver)",
+          "Value": 36.0,
+          "Unit": "h"
+        },
+        {
+          "Path": "Organism|ArterialBlood|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|ArterialBlood|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|ArterialBlood|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|ArterialBlood|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Bone|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Bone|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Bone|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Bone|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Bone|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Bone|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Bone|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Brain|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Brain|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Brain|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.00011881334236,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.00014961101137
+        },
+        {
+          "Path": "Organism|Brain|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Brain|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Brain|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Brain|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Fat|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Fat|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Fat|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Fat|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Fat|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Fat|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Fat|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Gonads|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Gonads|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Gonads|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.00030595598216,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0003526545268
+        },
+        {
+          "Path": "Organism|Gonads|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Gonads|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Gonads|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Gonads|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Heart|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Heart|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Heart|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Heart|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Heart|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Heart|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Heart|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Kidney|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Kidney|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Kidney|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.00021088028269,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.00015816021202
+        },
+        {
+          "Path": "Organism|Kidney|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Kidney|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Kidney|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Kidney|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Caecum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonAscendens|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonDescendens|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonSigmoid|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|ColonTransversum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Mucosa|Rectum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|LargeIntestine|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Intracellular|CYP2C19|Initial concentration",
+          "Value": 1.1394302849,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Intracellular|CYP2C19|Relative expression",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Intracellular|FMO_other|Initial concentration",
+          "Value": 1.4992503748,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Intracellular|FMO_other|Relative expression",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Pericentral|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Intracellular|CYP2C19|Initial concentration",
+          "Value": 1.1394302849,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Intracellular|CYP2C19|Relative expression",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Intracellular|FMO_other|Initial concentration",
+          "Value": 1.4992503748,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Intracellular|FMO_other|Relative expression",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Liver|Periportal|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Caecum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Caecum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|Caecum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Caecum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonAscendens|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonAscendens|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonAscendens|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonAscendens|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonDescendens|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonDescendens|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonDescendens|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonDescendens|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonSigmoid|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonSigmoid|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonSigmoid|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonSigmoid|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonTransversum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonTransversum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|ColonTransversum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|ColonTransversum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|Duodenum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Duodenum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|Duodenum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Duodenum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|LowerIleum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|LowerIleum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|LowerIleum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|LowerIleum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|LowerJejunum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|LowerJejunum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|LowerJejunum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|LowerJejunum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|Rectum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Rectum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|Rectum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Rectum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|Stomach|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Stomach|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|Stomach|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|Stomach|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|UpperIleum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|UpperIleum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|UpperIleum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|UpperIleum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|UpperJejunum|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|UpperJejunum|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lumen|UpperJejunum|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lumen|UpperJejunum|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lung|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lung|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lung|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lung|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lung|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lung|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lung|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Lung|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0013302851011,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lung|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.00040608703086
+        },
+        {
+          "Path": "Organism|Lung|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Lung|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lung|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Lung|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Lung|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Muscle|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Muscle|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Muscle|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Muscle|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Muscle|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Muscle|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Muscle|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Pancreas|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Pancreas|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Pancreas|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Pancreas|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Pancreas|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Pancreas|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Pancreas|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|PortalVein|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|PortalVein|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|PortalVein|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|PortalVein|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Skin|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Skin|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Skin|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Skin|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Skin|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Skin|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Skin|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.2790121777,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.3238009746
+        },
+        {
+          "Path": "Organism|SmallIntestine|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.5468638682,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.3238009746
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|Duodenum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.447434074,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.3238009746
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerIleum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.447434074,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.3238009746
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|LowerJejunum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.4394441798,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.3238009746
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperIleum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.4732475783,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.3238009746
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Mucosa|UpperJejunum|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|SmallIntestine|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Spleen|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Spleen|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Spleen|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Spleen|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Spleen|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Spleen|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Spleen|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|Interstitial|CYP2C19|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Stomach|Interstitial|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|Interstitial|FMO_other|Fraction expressed interstitial",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Stomach|Interstitial|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|Intracellular|CYP2C19|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Stomach|Intracellular|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|Intracellular|CYP2C19|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Stomach|Intracellular|FMO_other|Fraction expressed intracellular",
+          "Value": 1.0
+        },
+        {
+          "Path": "Organism|Stomach|Intracellular|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|Intracellular|FMO_other|Relative expression",
+          "Value": 0.0
+        },
+        {
+          "Path": "Organism|Stomach|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|Stomach|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|VenousBlood|BloodCells|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|VenousBlood|BloodCells|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|VenousBlood|Plasma|CYP2C19|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        },
+        {
+          "Path": "Organism|VenousBlood|Plasma|FMO_other|Initial concentration",
+          "Value": 0.0,
+          "Unit": "µmol/l"
+        }
+      ],
+      "OutputSelections": [
+        "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)"
+      ],
+      "OutputMappings": [
+        {
+          "Scaling": "Log",
+          "Path": "300mg po asian PM popSim|Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+          "ObservedData": "Yu2001.Asian.Moclobemide.300.po.sd.PM"
+        }
+      ],
+      "Population": "Asian_Yu2001",
+      "Compounds": [
+        {
+          "Name": "Moclobemide",
+          "CalculationMethods": [
+            "Cellular partition coefficient method - Rodgers and Rowland",
+            "Cellular permeability - PK-Sim Standard"
+          ],
+          "Processes": [
+            {
+              "MoleculeName": "CYP2C19"
+            },
+            {
+              "Name": "FMO_other-Intrinsic-CL-fit",
+              "MoleculeName": "FMO_other"
+            },
+            {
+              "Name": "Renal Clearances-Schoerlin 1987",
+              "SystemicProcessType": "Renal"
+            }
+          ],
+          "Protocol": {
+            "Name": "PO_300mg_TAB",
+            "Formulations": [
+              {
+                "Name": "Solution",
+                "Key": "Formulation"
+              }
+            ]
+          }
+        }
+      ],
+      "HasResults": true,
+      "PopulationAnalyses": [
+        {
+          "Type": "TimeProfile",
+          "Analysis": {
+            "Fields": [
+              {
+                "Name": "Moclobemide simulated",
+                "Dimension": "Concentration (molar)",
+                "Scaling": "Log",
+                "Unit": "µmol/l",
+                "QuantityPath": "Organism|PeripheralVenousBlood|Moclobemide|Plasma (Peripheral Venous Blood)",
+                "QuantityType": "Drug, Observer",
+                "Color": "#000000",
+                "Area": "DataArea"
+              }
+            ],
+            "Statistics": [
+              {
+                "Id": "ArithmeticMean",
+                "LineStyle": "Solid"
+              },
+              {
+                "Id": "ArithmeticStandardDeviation",
+                "LineStyle": "Solid"
+              }
+            ]
+          },
+          "ObservedDataCollection": {
+            "ObservedData": [
+              "Yu2001.Asian.Moclobemide.300.po.sd.PM"
+            ],
+            "ApplyGrouping": false,
+            "CurveOptions": [
+              {
+                "Caption": "Yu2001.Asian.Moclobemide.300.po.sd.PM-Moclobemide-Peripheral Venous Blood-Plasma-CentralMeasure",
+                "Path": "Yu2001.Asian.Moclobemide.300.po.sd.PM|ObservedData|Peripheral Venous Blood|Plasma|Moclobemide|CentralMeasure",
+                "CurveOptions": {
+                  "LineStyle": "None",
+                  "Symbol": "Circle"
+                }
+              }
+            ]
+          },
+          "XAxisSettings": {
+            "AutoRange": false
+          },
+          "YAxisSettings": {
+            "AutoRange": false
+          },
+          "SecondaryYAxisSettings": [],
+          "Name": "Time Profile Analysis",
+          "FontAndSize": {
+            "Fonts": {
+              "AxisSize": 10,
+              "LegendSize": 8,
+              "TitleSize": 16,
+              "DescriptionSize": 12,
+              "OriginSize": 8,
+              "FontFamilyName": "Microsoft Sans Serif",
+              "WatermarkSize": 32
+            }
+          },
+          "Settings": {
+            "SideMarginsEnabled": true,
+            "LegendPosition": "RightInside",
+            "BackColor": "#00FFFFFF",
+            "DiagramBackColor": "#FFFFFF"
+          },
+          "OriginText": "Moclobemide\n300mg po asian PM popSim\n2020-06-17 20:16"
         }
       ],
       "Interactions": [
